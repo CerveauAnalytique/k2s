@@ -99,9 +99,13 @@ export default function ChatNeuriyPage() {
   }
 
   useEffect(() => {
-    if (!initialQ || bootstrapped.current) return
+    if (!initialQ || bootstrapped.current || loading) return
     bootstrapped.current = true
-    void sendMessage(initialQ)
+    // Defer so the first paint mounts handlers before auto-send
+    const t = window.setTimeout(() => {
+      void sendMessage(initialQ)
+    }, 50)
+    return () => window.clearTimeout(t)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initialQ])
 

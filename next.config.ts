@@ -10,6 +10,8 @@ import { redirects } from './redirects'
 const NEXT_PUBLIC_SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
 
 const nextConfig: NextConfig = {
+  // Allow cloud-agent / local testing via 127.0.0.1 as well as localhost
+  allowedDevOrigins: ['127.0.0.1', 'localhost'],
   // Temporarily required on Windows until Next.js fixes Turbopack Sass resolution.
   // See: https://github.com/vercel/next.js/issues/86431
   sassOptions: {
