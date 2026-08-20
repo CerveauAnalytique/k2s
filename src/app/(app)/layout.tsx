@@ -1,10 +1,8 @@
 import type { ReactNode } from 'react'
 
-import { AdminBar } from '@/components/AdminBar'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
-import { LivePreviewListener } from '@/components/LivePreviewListener'
-import { ensureStartsWith } from '@/utilities/ensureStartsWith'
+import { SiteChrome } from '@/components/SiteChrome'
 import { Providers } from '@/providers'
 import { InitTheme } from '@/providers/Theme/InitTheme'
 import { GeistSans } from 'geist/font/sans'
@@ -36,11 +34,9 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       <body>
         <div className="grain" />
         <Providers>
-          <LivePreviewListener />
-
-          <Header />
-          <main className="pt-[56px]">{children}</main>
-          <Footer />
+          <SiteChrome header={<Header />} footer={<Footer />}>
+            {children}
+          </SiteChrome>
         </Providers>
       </body>
     </html>

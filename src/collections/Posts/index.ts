@@ -7,13 +7,26 @@ export const Posts: CollectionConfig = {
   access: {
     create: adminOnly,
     delete: adminOnly,
-    read: () => true,
+    read: ({ req: { user } }) => {
+      // Authenticated admins/users can read everything in admin; public only published.
+      if (user) return true
+      return {
+        _status: {
+          equals: 'published',
+        },
+      }
+    },
     update: adminOnly,
   },
   admin: {
     useAsTitle: 'title',
-    defaultColumns: ['title', 'blogId', 'category', 'slug', 'publishedAt'],
+    defaultColumns: ['title', 'blogId', 'category', 'slug', 'publishedAt', '_status'],
     group: 'Content',
+  },
+  versions: {
+    drafts: {
+      autosave: false,
+    },
   },
   fields: [
     {
