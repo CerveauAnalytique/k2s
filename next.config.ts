@@ -31,10 +31,29 @@ const nextConfig: NextConfig = {
           protocol: url.protocol.replace(':', '') as 'http' | 'https',
         }
       }),
+      {
+        hostname: '127.0.0.1',
+        protocol: 'http',
+        port: '8000',
+      },
+      {
+        hostname: 'localhost',
+        protocol: 'http',
+        port: '8000',
+      },
     ],
   },
   reactStrictMode: true,
   redirects,
+  async rewrites() {
+    const marketplaceApi = (process.env.MARKETPLACE_API_URL || 'http://127.0.0.1:8000').replace(/\/$/, '')
+    return [
+      {
+        source: '/marketplace-api/:path*',
+        destination: `${marketplaceApi}/:path*`,
+      },
+    ]
+  },
   webpack: (webpackConfig) => {
     webpackConfig.resolve.extensionAlias = {
       '.cjs': ['.cts', '.cjs'],

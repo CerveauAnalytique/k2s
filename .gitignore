@@ -41,8 +41,15 @@ next-env.d.ts
 
 public/media
 
-
 # Vendored AI engines
-vendor/**/node_modules
+vendor/**/node_modules/
 vendor/ellofive/.ellofive-deepfakes.env
 vendor/ellofive/memory/*.local.md
+
+# Neuriy Marketplace local API data
+neuriy-marketplace/src/api/data/*.db
+neuriy-marketplace/src/api/uploads/*
+!neuriy-marketplace/src/api/uploads/.gitkeep
+neuriy-marketplace/src/api/static/icons/*
+!neuriy-marketplace/src/api/static/icons/.gitkeep
+neuriy-marketplace/src/api/.env

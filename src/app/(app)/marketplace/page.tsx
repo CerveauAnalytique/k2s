@@ -1,112 +1,176 @@
-import React from 'react'
 import Link from 'next/link'
-import { Store, Sparkles, ArrowUpRight, ShieldCheck, Zap } from 'lucide-react'
 import type { Metadata } from 'next'
 
-const MARKETPLACE_ITEMS = [
-  {
-    id: 'm1',
-    title: 'Neural Vision & Carbon Processing Model v4.2',
-    category: 'AI Models',
-    price: '$149 / mo',
-    desc: 'High-precision CNN spatial vision model for real-time carbon estimation and dataset parsing.',
-    badge: 'Popular',
-  },
-  {
-    id: 'm2',
-    title: 'Enterprise Vector Indexing SDK',
-    category: 'SDK & Tools',
-    price: '$299 / mo',
-    desc: 'Sub-millisecond similarity search & vector database adapter for Postgres and Payload CMS.',
-    badge: 'Enterprise',
-  },
-  {
-    id: 'm3',
-    title: 'Autonomous Multi-Agent Orchestrator',
-    category: 'Agents',
-    price: '$99 / mo',
-    desc: 'Deploy resilient agent swarms with built-in MCP tool definitions, retries, and fallback logging.',
-    badge: 'New',
-  },
-  {
-    id: 'm4',
-    title: 'Realtime Voice & Audio Streaming API',
-    category: 'API Access',
-    price: '$79 / mo',
-    desc: 'Low-latency bidirectional WebSocket voice streaming with VAD and noise suppression.',
-    badge: 'Verified',
-  },
-]
-
-export default function MarketplacePage() {
-  return (
-    <div className="min-h-screen bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 py-12 transition-colors">
-      <div className="max-w-[1400px] mx-auto px-6 space-y-12">
-        {/* Header Banner */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-neutral-200 dark:border-neutral-800">
-          <div className="space-y-3 max-w-2xl">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1 bg-black text-white dark:bg-white dark:text-black text-xs font-bold rounded-full tracking-widest uppercase">
-              <Store size={14} />
-              Cerveau Marketplace
-            </span>
-            <h1 className="text-4xl md:text-6xl font-black tracking-tighter">
-              AI Models, SDKs & <span className="text-neutral-400">Tools</span>
-            </h1>
-            <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-lg">
-              Explore pre-built neural models, agent tools, and enterprise data adapters ready to deploy into your workspace.
-            </p>
-          </div>
-
-          <Link
-            href="/shop"
-            className="inline-flex items-center justify-center px-6 py-3 bg-black text-white dark:bg-white dark:text-black font-semibold rounded-xl text-sm hover:opacity-90 transition shadow-lg self-start md:self-auto"
-          >
-            Visit Hardware Shop →
-          </Link>
-        </div>
-
-        {/* Marketplace Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {MARKETPLACE_ITEMS.map((item) => (
-            <div
-              key={item.id}
-              className="group bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl p-6 flex flex-col justify-between hover:border-neutral-400 dark:hover:border-neutral-600 transition-all shadow-sm hover:shadow-xl"
-            >
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-400">
-                    {item.category}
-                  </span>
-                  <span className="bg-black/10 dark:bg-white/10 text-neutral-900 dark:text-white text-[10px] font-semibold px-2.5 py-1 rounded-full">
-                    {item.badge}
-                  </span>
-                </div>
-                <h3 className="text-lg font-bold leading-snug group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-
-              <div className="pt-6 mt-6 border-t border-neutral-200 dark:border-neutral-800/80 flex items-center justify-between">
-                <span className="text-sm font-bold font-mono">{item.price}</span>
-                <Link
-                  href="/dashboard"
-                  className="text-xs font-semibold text-neutral-900 dark:text-white hover:text-blue-500 transition flex items-center"
-                >
-                  Deploy <ArrowUpRight size={13} className="ml-0.5" />
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  )
-}
+import { AppTile } from '@/components/marketplace/AppTile'
+import { getApps, getCategories } from '@/lib/marketplace/api'
+import { getMarketplaceToken } from '@/lib/marketplace/auth'
+import type { MarketplaceApp } from '@/lib/marketplace/types'
 
 export const metadata: Metadata = {
-  title: 'Marketplace — Cerveau Analytique',
-  description: 'Explore neural models, SDKs, and enterprise agent tools.',
+  title: 'Neuriy Marketplace',
+  description: 'Browse, download, and publish AI apps and tools for Neuriy Chat.',
+}
+
+type SearchParams = Promise<{ q?: string; category?: string; sort?: string }>
+
+export default async function MarketplaceHomePage({ searchParams }: { searchParams: SearchParams }) {
+  const params = await searchParams
+  const query = params.q || ''
+  const category = params.category || 'All Categories'
+  const sort = params.sort === 'new' ? 'new' : 'popular'
+  const signedIn = Boolean(await getMarketplaceToken())
+
+  let featuredApps: MarketplaceApp[] = []
+  let catalogApps: MarketplaceApp[] = []
+  let categories = await getCategories()
+  let apiError: string | null = null
+
+  try {
+    ;[featuredApps, catalogApps, categories] = await Promise.all([
+      getApps({ q: query || undefined, category, featured: true, sort: 'popular' }),
+      getApps({ q: query || undefined, category, sort }),
+      getCategories(),
+    ])
+  } catch {
+    apiError = 'Marketplace API is unavailable. Start the Python API on port 8000 (pnpm marketplace:api).'
+  }
+
+  return (
+    <>
+      {apiError ? <div className="banner banner--warn">{apiError}</div> : null}
+
+      <section className="store-hero">
+        <div className="store-hero__copy">
+          <p className="store-hero__brand">Neuriy Marketplace</p>
+          <h1 className="store-hero__title">Apps and tools for Neuriy AI</h1>
+          <p className="store-hero__lede">
+            Browse featured assistants, publish your own packages, and open installs from Neuriy Chat.
+          </p>
+          <div className="store-hero__actions">
+            <a className="button button--primary" href="#featured">
+              Explore featured
+            </a>
+            {signedIn ? (
+              <Link className="button button--ghost" href="/marketplace/apps/upload">
+                Upload your app
+              </Link>
+            ) : (
+              <Link className="button button--ghost" href="/marketplace/account/register">
+                Create account
+              </Link>
+            )}
+            <Link className="button button--ghost" href="/marketplace/pages/sdk">
+              Open in Neuriy Chat
+            </Link>
+          </div>
+        </div>
+        <div className="store-hero__visual" aria-hidden="true">
+          <div className="store-hero__orbit">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/marketplace/images/neuriy-logo.svg" alt="" width={120} height={120} />
+          </div>
+        </div>
+      </section>
+
+      <section className="categories-bar">
+        <form method="get" action="/marketplace" className="categories-form">
+          <input type="hidden" name="q" value={query} />
+          <input type="hidden" name="sort" value={sort} />
+          <label className="categories-trigger">
+            <span className="categories-trigger__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="3" width="7" height="7" stroke="currentColor" strokeWidth="1.8" />
+                <rect x="14" y="3" width="7" height="7" stroke="currentColor" strokeWidth="1.8" />
+                <rect x="3" y="14" width="7" height="7" stroke="currentColor" strokeWidth="1.8" />
+                <rect x="14" y="14" width="7" height="7" stroke="currentColor" strokeWidth="1.8" />
+              </svg>
+            </span>
+            <select name="category" className="categories-select" defaultValue={category} aria-label="All Categories">
+              {categories.map((item) => (
+                <option key={item} value={item}>
+                  {item}
+                </option>
+              ))}
+            </select>
+            <span className="categories-trigger__chevron" aria-hidden="true">
+              ▾
+            </span>
+          </label>
+          <noscript>
+            <button type="submit">Apply</button>
+          </noscript>
+        </form>
+      </section>
+
+      <section className="panel" id="featured">
+        <div className="panel__header">
+          <h2 className="panel__title">Featured Apps</h2>
+          <Link className="panel__link" href="/marketplace?sort=popular">
+            View All »
+          </Link>
+        </div>
+        <div className="app-row">
+          {featuredApps.length === 0 ? (
+            <p className="empty">No featured apps yet.</p>
+          ) : (
+            featuredApps.slice(0, 7).map((app) => <AppTile key={app.id} app={app} />)
+          )}
+        </div>
+      </section>
+
+      <section className="panel">
+        <div className="panel__header panel__header--tabs">
+          <div className="tabs" role="tablist">
+            <Link
+              className={`tab ${sort === 'popular' ? 'is-active' : ''}`}
+              role="tab"
+              href={`/marketplace?${new URLSearchParams({ ...(query ? { q: query } : {}), category, sort: 'popular' }).toString()}`}
+            >
+              Popular
+            </Link>
+            <Link
+              className={`tab ${sort === 'new' ? 'is-active' : ''}`}
+              role="tab"
+              href={`/marketplace?${new URLSearchParams({ ...(query ? { q: query } : {}), category, sort: 'new' }).toString()}`}
+            >
+              New
+            </Link>
+          </div>
+          <Link
+            className="panel__link"
+            href={`/marketplace?${new URLSearchParams({ ...(query ? { q: query } : {}), category, sort }).toString()}`}
+          >
+            View All »
+          </Link>
+        </div>
+        <div className="app-grid">
+          {catalogApps.length === 0 ? (
+            <p className="empty">No apps match your search.</p>
+          ) : (
+            catalogApps.map((app) => <AppTile key={app.id} app={app} />)
+          )}
+        </div>
+      </section>
+
+      <section className="panel panel--cta">
+        <div className="cta-row">
+          <div>
+            <h2 className="panel__title">Build for Neuriy Chat</h2>
+            <p className="lede">
+              Use the official SDK to search, install, and open marketplace apps from Neuriy Chat conversations.
+            </p>
+          </div>
+          <Link className="button button--primary" href="/marketplace/pages/sdk">
+            Get the SDK
+          </Link>
+        </div>
+      </section>
+
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `document.querySelector('.categories-select')?.addEventListener('change', (e) => e.target.form?.submit())`,
+        }}
+      />
+    </>
+  )
 }
