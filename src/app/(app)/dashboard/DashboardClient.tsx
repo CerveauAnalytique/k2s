@@ -39,14 +39,14 @@ export function DashboardClient({ user }: Props) {
       {/* Beta banner */}
       <div className="dash-beta-banner">
         <span className="dash-beta-badge">BETA</span>
-        You are using the Cerveau Analytique beta dashboard. Features may change.{' '}
-        <a href="mailto:feedback@cerveauanalytique.com" className="dash-beta-link">Send feedback</a>
+        You are using the Prysel beta dashboard. Features may change.{' '}
+        <a href="mailto:feedback@prysel.com" className="dash-beta-link">Send feedback</a>
       </div>
 
       {/* Sidebar */}
       <aside className="dash-sidebar">
         <div className="dash-sidebar-brand">
-          <Link href="/" className="dash-brand-link">Cerveau Analytique</Link>
+          <Link href="/" className="dash-brand-link">Prysel</Link>
           <span className="dash-beta-pill">β</span>
         </div>
         <nav className="dash-nav">

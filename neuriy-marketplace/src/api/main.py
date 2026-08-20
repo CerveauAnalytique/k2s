@@ -25,8 +25,8 @@ from moderation import create_rule, evaluate_app_against_rules, list_rules, set_
 from repository import repo
 
 app = FastAPI(
-    title="Neuriy Marketplace API",
-    description="Turso/libSQL-backed Neuriy AI marketplace with roles and system AI moderation.",
+    title="Prysel Marketplace API",
+    description="Turso/libSQL-backed Prysel AI marketplace with roles and system AI moderation.",
     version="2.0.0",
 )
 

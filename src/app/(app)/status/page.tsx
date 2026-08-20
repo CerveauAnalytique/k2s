@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-  title: 'System Status — Cerveau Analytique',
-  description: 'Real-time operational status of Cerveau Analytique services.',
+  title: 'System Status — Prysel',
+  description: 'Real-time operational status of Prysel services.',
 }
 
 const services = [

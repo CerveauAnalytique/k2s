@@ -71,7 +71,7 @@ SYSTEM_RULES = [
     {
         "code": "AI_MIN_DESCRIPTION",
         "title": "Meaningful description",
-        "description": "Apps must include a clear description of at least 40 characters explaining Neuriy AI value.",
+        "description": "Apps must include a clear description of at least 40 characters explaining Prysel AI value.",
         "severity": "block",
         "pattern": None,
         "min_description_length": 40,
@@ -94,8 +94,8 @@ SYSTEM_RULES = [
     },
     {
         "code": "AI_NEURIY_RELEVANCE",
-        "title": "Neuriy AI relevance",
-        "description": "Prefer apps that mention AI, Neuriy, agent, model, prompt, or related tooling.",
+        "title": "Prysel AI relevance",
+        "description": "Prefer apps that mention AI, Prysel, agent, model, prompt, or related tooling.",
         "severity": "warn",
         "pattern": r"\b(ai|neuriy|agent|model|prompt|llm|assistant|tool)\b",
         "min_description_length": None,
@@ -174,18 +174,18 @@ def _seed_sample_apps_if_empty(conn) -> None:
     from config import ICON_DIR, UPLOAD_DIR
 
     samples = [
-        ("Neuriy Chat", "Conversational assistant tuned for Neuriy AI workflows and agents.", "Assistants", "Neuriy", True, 4.8, 18240),
-        ("Prompt Studio", "Craft, version, and share reusable prompt packs for Neuriy models.", "Productivity", "Neuriy Labs", True, 4.6, 15410),
-        ("Vision Desk", "Image understanding toolkit for multimodal Neuriy AI agents.", "Creative", "Pixel Forge", True, 4.5, 12100),
-        ("Code Copilot", "Inline coding helper for Neuriy developer environments and tools.", "Developer Tools", "Neuriy", True, 4.9, 21050),
+        ("Prysel Chat", "Conversational assistant tuned for Prysel AI workflows and agents.", "Assistants", "Prysel", True, 4.8, 18240),
+        ("Prompt Studio", "Craft, version, and share reusable prompt packs for Prysel models.", "Productivity", "Prysel Labs", True, 4.6, 15410),
+        ("Vision Desk", "Image understanding toolkit for multimodal Prysel AI agents.", "Creative", "Pixel Forge", True, 4.5, 12100),
+        ("Code Copilot", "Inline coding helper for Prysel developer environments and tools.", "Developer Tools", "Prysel", True, 4.9, 21050),
         ("Research Radar", "Scan papers and summarize findings for AI research teams.", "Research", "Atlas AI", False, 4.2, 8300),
-        ("Lesson Builder", "Generate structured learning modules with Neuriy AI models.", "Education", "Campus Soft", False, 4.0, 5120),
-        ("Workflow Glue", "Connect Neuriy tools into automated AI pipelines.", "Utilities", "Pipewright", False, 4.3, 9740),
-        ("Voice Notes", "Transcribe and organize spoken ideas with Neuriy speech AI.", "Productivity", "Echo Works", False, 4.1, 6400),
-        ("Style Transfer", "Apply artistic styles to images using Neuriy creative models.", "Creative", "Canvas AI", False, 4.4, 11020),
-        ("Dataset Scout", "Discover and prepare datasets for Neuriy fine-tuning jobs.", "Developer Tools", "DataNest", False, 4.7, 14600),
-        ("Meeting Scribe", "Capture action items from meetings with Neuriy summarization AI.", "Productivity", "Neuriy", True, 4.5, 9900),
-        ("Safe Guard", "Content moderation utilities for Neuriy AI applications.", "Utilities", "Shield Soft", False, 4.2, 7200),
+        ("Lesson Builder", "Generate structured learning modules with Prysel AI models.", "Education", "Campus Soft", False, 4.0, 5120),
+        ("Workflow Glue", "Connect Prysel tools into automated AI pipelines.", "Utilities", "Pipewright", False, 4.3, 9740),
+        ("Voice Notes", "Transcribe and organize spoken ideas with Prysel speech AI.", "Productivity", "Echo Works", False, 4.1, 6400),
+        ("Style Transfer", "Apply artistic styles to images using Prysel creative models.", "Creative", "Canvas AI", False, 4.4, 11020),
+        ("Dataset Scout", "Discover and prepare datasets for Prysel fine-tuning jobs.", "Developer Tools", "DataNest", False, 4.7, 14600),
+        ("Meeting Scribe", "Capture action items from meetings with Prysel summarization AI.", "Productivity", "Prysel", True, 4.5, 9900),
+        ("Safe Guard", "Content moderation utilities for Prysel AI applications.", "Utilities", "Shield Soft", False, 4.2, 7200),
     ]
     colors = [
         "#2B6CB0", "#C05621", "#6B46C1", "#2F855A", "#B83280", "#2C7A7B",
@@ -208,7 +208,7 @@ def _seed_sample_apps_if_empty(conn) -> None:
         )
         package_name = f"{app_id}.neuriy"
         (UPLOAD_DIR / package_name).write_text(
-            f"Neuriy AI package\nname={name}\nversion=1.0.0\n",
+            f"Prysel AI package\nname={name}\nversion=1.0.0\n",
             encoding="utf-8",
         )
         execute(

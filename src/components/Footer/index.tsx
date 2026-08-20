@@ -62,7 +62,7 @@ export function Footer() {
             </form>
             {subscribed && (
               <p className="text-xs text-emerald-600 dark:text-emerald-400 font-medium -mt-8 mb-6">
-                ✓ Thank you for subscribing to Cerveau Analytique.
+                ✓ Thank you for subscribing to Prysel.
               </p>
             )}
           </div>
@@ -129,7 +129,7 @@ export function Footer() {
           {/* Watermark Zone */}
           <div className="relative flex-grow min-h-[220px] lg:min-h-[300px] flex items-center justify-center overflow-hidden">
             <div className="text-[14vw] lg:text-[9.5vw] font-black text-neutral-300/60 dark:text-neutral-800/40 select-none tracking-tighter whitespace-nowrap pointer-events-none transform translate-y-3">
-              cerveau.ai
+              prysel.com
             </div>
           </div>
         </div>
@@ -138,7 +138,7 @@ export function Footer() {
       {/* Bottom Copyright Bar */}
       <div className="max-w-[1500px] mx-auto flex flex-col xl:flex-row justify-between items-center py-6 px-8 text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 relative z-20 border-t border-neutral-200 dark:border-neutral-900 uppercase tracking-widest">
         <div className="mb-4 xl:mb-0 text-center xl:text-left">
-          © 2026 Cerveau Analytique, Inc. / All Rights Reserved
+          © 2026 Prysel, Inc. / All Rights Reserved
         </div>
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
           <Link href="/privacy" className="hover:text-black dark:hover:text-white transition">Privacy Policy</Link>

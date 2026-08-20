@@ -106,7 +106,7 @@ def evaluate_app_against_rules(app: dict[str, Any], checked_by: str = "system_ai
             if rule["code"] == "AI_NEURIY_RELEVANCE":
                 # Positive pattern: must match
                 passed = match is not None
-                detail = "Mentions Neuriy/AI concepts" if passed else "Missing Neuriy/AI relevance signals"
+                detail = "Mentions Prysel/AI concepts" if passed else "Missing Prysel/AI relevance signals"
             elif rule["code"] == "AI_NO_PLACEHOLDER_NAME":
                 passed = match is None
                 detail = "Name looks real" if passed else "Placeholder/generic name rejected"
@@ -156,7 +156,7 @@ def evaluate_app_against_rules(app: dict[str, Any], checked_by: str = "system_ai
     if warn_failures:
         notes_parts.append("warnings: " + "; ".join(warn_failures))
     if not blacklisted:
-        notes_parts.append("meets Neuriy marketplace standards")
+        notes_parts.append("meets Prysel marketplace standards")
 
     # Persist checks
     conn = get_connection()

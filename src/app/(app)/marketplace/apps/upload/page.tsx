@@ -5,7 +5,7 @@ import { getCategories } from '@/lib/marketplace/api'
 import { getMarketplaceToken } from '@/lib/marketplace/auth'
 
 export const metadata: Metadata = {
-  title: 'Upload · Neuriy Marketplace',
+  title: 'Upload · Prysel Marketplace',
 }
 
 export default async function UploadPage({
@@ -22,19 +22,19 @@ export default async function UploadPage({
   return (
     <section className="panel panel--narrow">
       <h1 className="page-title">Upload your app or tool</h1>
-      <p className="lede">Publish a package for Neuriy AI users to discover and download.</p>
+      <p className="lede">Publish a package for Prysel AI users to discover and download.</p>
       {params.error ? <div className="banner banner--warn">{params.error}</div> : null}
       {params.success ? <div className="banner banner--ok">{params.success}</div> : null}
 
       <form action="/api/marketplace/apps/upload" method="post" encType="multipart/form-data" className="upload-form">
         <label className="field">
           <span>App name</span>
-          <input name="name" required placeholder="My Neuriy Tool" />
+          <input name="name" required placeholder="My Prysel Tool" />
         </label>
 
         <label className="field">
           <span>Description</span>
-          <textarea name="description" rows={5} required placeholder="What does this app do for Neuriy AI users?" />
+          <textarea name="description" rows={5} required placeholder="What does this app do for Prysel AI users?" />
         </label>
 
         <div className="field-row">

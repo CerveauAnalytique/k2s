@@ -1,4 +1,4 @@
-# Neuriy Marketplace Python SDK
+# Prysel Marketplace Python SDK
 
 Install:
 
@@ -14,7 +14,7 @@ export NEURIY_MARKETPLACE_STORE_URL=http://127.0.0.1:5011
 export NEURIY_MARKETPLACE_TOKEN=optional-jwt
 ```
 
-Use in Neuriy Chat:
+Use in Prysel Chat:
 
 ```python
 from neuriy_marketplace import MarketplaceClient, chat_tools, execute_tool
@@ -22,8 +22,8 @@ from neuriy_marketplace import MarketplaceClient, chat_tools, execute_tool
 client = MarketplaceClient()
 print(client.search_apps("assistant")[:3])
 
-# Register chat_tools() with Neuriy Chat, then:
+# Register chat_tools() with Prysel Chat, then:
 result = execute_tool("marketplace_open_app", {"app_id": "..."}, client=client)
 ```
 
-Also load `../neuriy-chat/manifest.json` as a Neuriy Chat plugin manifest.
+Also load `../neuriy-chat/manifest.json` as a Prysel Chat plugin manifest.

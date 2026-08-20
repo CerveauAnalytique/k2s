@@ -6,13 +6,13 @@ from .client import MarketplaceClient
 
 
 def chat_tools() -> list[dict[str, Any]]:
-    """OpenAI / Neuriy Chat compatible tool schemas."""
+    """OpenAI / Prysel Chat compatible tool schemas."""
     return [
         {
             "type": "function",
             "function": {
                 "name": "marketplace_search",
-                "description": "Search Neuriy Marketplace for AI apps and tools.",
+                "description": "Search Prysel Marketplace for AI apps and tools.",
                 "parameters": {
                     "type": "object",
                     "properties": {
@@ -39,7 +39,7 @@ def chat_tools() -> list[dict[str, Any]]:
             "type": "function",
             "function": {
                 "name": "marketplace_list_categories",
-                "description": "List Neuriy Marketplace categories.",
+                "description": "List Prysel Marketplace categories.",
                 "parameters": {"type": "object", "properties": {}},
             },
         },
@@ -47,7 +47,7 @@ def chat_tools() -> list[dict[str, Any]]:
             "type": "function",
             "function": {
                 "name": "marketplace_open_app",
-                "description": "Open a marketplace app inside Neuriy Chat (returns deep links and a chat card).",
+                "description": "Open a marketplace app inside Prysel Chat (returns deep links and a chat card).",
                 "parameters": {
                     "type": "object",
                     "properties": {"app_id": {"type": "string"}},
@@ -64,7 +64,7 @@ def execute_tool(
     *,
     client: Optional[MarketplaceClient] = None,
 ) -> Any:
-    """Dispatch a Neuriy Chat tool call to the marketplace client."""
+    """Dispatch a Prysel Chat tool call to the marketplace client."""
     client = client or MarketplaceClient()
     args = arguments or {}
 

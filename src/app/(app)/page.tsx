@@ -96,7 +96,7 @@ export default async function HomePage() {
 }
 
 export const metadata: Metadata = {
-  title: 'Cerveau Analytique — AGI Evolution & Analytical Intelligence',
+  title: 'Prysel — AGI Evolution & Analytical Intelligence',
   description:
     'The analytical intelligence layer powering modern engineering teams, neural models, and data labs.',
 }

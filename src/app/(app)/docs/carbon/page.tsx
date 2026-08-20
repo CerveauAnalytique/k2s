@@ -3,7 +3,7 @@ import React from 'react'
 import { DocsLayout } from '@/components/DocsLayout'
 import Link from 'next/link'
 
-export const metadata: Metadata = { title: 'Carbon API — Cerveau Analytique Docs' }
+export const metadata: Metadata = { title: 'Carbon API — Prysel Docs' }
 
 const TOC = [
   { id: 'overview', title: 'Overview', level: 2 },
@@ -48,7 +48,7 @@ export default function CarbonDocsPage() {
       </ol>
 
       <h2 id="endpoint">Endpoint reference</h2>
-      <pre className="docs-code-block"><code>POST https://api.cerveauanalytique.com/v1/carbon/calculate</code></pre>
+      <pre className="docs-code-block"><code>POST https://api.prysel.com/v1/carbon/calculate</code></pre>
 
       <h2 id="parameters">Parameters</h2>
       <table className="docs-table">
@@ -70,9 +70,9 @@ export default function CarbonDocsPage() {
 
       <h2 id="example">Full example</h2>
       <pre className="docs-code-block"><code>{`// JavaScript SDK
-import { CerveauAnalytique } from '@cerveauanalytique/sdk'
+import { PryselAnalytique } from '@prysel/sdk'
 
-const ca = new CerveauAnalytique({ apiKey: process.env.CA_API_KEY })
+const ca = new PryselAnalytique({ apiKey: process.env.CA_API_KEY })
 
 const result = await ca.carbon.calculate({
   country: 'United States',

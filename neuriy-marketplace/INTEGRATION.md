@@ -1,8 +1,8 @@
-# Neuriy Marketplace (vendored)
+# Prysel Marketplace (vendored)
 
-Source: https://github.com/neuriy/Neuriy-Marketplace
+Source: https://github.com/neuriy/Prysel-Marketplace
 
-This folder holds the official Neuriy Marketplace **Python FastAPI** backend, SDK, and docs.
+This folder holds the official Prysel Marketplace **Python FastAPI** backend, SDK, and docs.
 The ASP.NET MVC storefront is replaced in this monorepo by Next.js pages under `/marketplace`.
 
 ## Run with this project

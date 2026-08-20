@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import { getMe } from '@/lib/marketplace/api'
 
 export const metadata: Metadata = {
-  title: 'Profile · Neuriy Marketplace',
+  title: 'Profile · Prysel Marketplace',
 }
 
 export default async function ProfilePage() {

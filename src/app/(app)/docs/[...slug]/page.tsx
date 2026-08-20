@@ -15,7 +15,7 @@ export default function DocsNotFoundPage() {
       </p>
       <p>
         Have questions? Reach us at{' '}
-        <a href="mailto:dev@cerveauanalytique.com" className="inline-link">dev@cerveauanalytique.com</a>.
+        <a href="mailto:dev@prysel.com" className="inline-link">dev@prysel.com</a>.
       </p>
     </DocsLayout>
   )

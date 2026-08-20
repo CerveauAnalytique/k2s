@@ -54,7 +54,7 @@ export function Hero() {
               AGI Evolution
             </span>
             <h1 className="text-4xl md:text-[72px] font-black tracking-tighter text-neutral-900 dark:text-white leading-[0.92]">
-              Cerveau <span className="text-neutral-400 dark:text-neutral-500">Intelligence</span>
+              Prysel <span className="text-neutral-400 dark:text-neutral-500">Intelligence</span>
             </h1>
 
             {/* Left-Aligned Chat Bar close to heading text */}
@@ -63,7 +63,7 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Mac Status Bar & Neuriy Face Widget */}
+          {/* Right Column: Mac Status Bar & Prysel Face Widget */}
           <div className="col-span-1 md:col-span-5 flex flex-col items-center md:items-end justify-center space-y-3 pt-2">
             {/* MacOS Desktop Status Bar */}
             <div className="flex items-center gap-3 text-neutral-600 dark:text-neutral-300 font-mono text-xs bg-white/70 dark:bg-neutral-900/70 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-neutral-200 dark:border-neutral-800 shadow-sm">
@@ -83,13 +83,13 @@ export function Hero() {
               <span className="font-semibold text-[11.5px] ml-1">{time || 'Wed, Aug 19 8:43 PM'}</span>
             </div>
 
-            {/* Neuriy Face Desktop Widget */}
+            {/* Prysel Face Desktop Widget */}
             <div className="w-52 h-28 md:w-64 md:h-36 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-xl border border-neutral-200 dark:border-neutral-800 rounded-[32px] flex flex-col items-center justify-center shadow-lg hover:scale-102 transition-transform cursor-pointer group">
               <div className="group-hover:scale-105 transition-transform">
                 <Face />
               </div>
               <span className="mt-2 text-[10px] font-bold text-neutral-400 dark:text-neutral-500 tracking-widest uppercase">
-                Neuriy AI Core
+                Prysel AI Core
               </span>
             </div>
           </div>

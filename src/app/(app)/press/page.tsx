@@ -2,14 +2,14 @@ import type { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-  title: 'Press — Cerveau Analytique',
+  title: 'Press — Prysel',
   description: 'Press kit, media coverage, and contact information for journalists.',
 }
 
 const coverage = [
-  { outlet: 'TechCrunch', headline: 'Cerveau Analytique Raises $120M to Power Real-Time AI Analytics', date: 'Jun 10, 2026', href: '#' },
+  { outlet: 'TechCrunch', headline: 'Prysel Raises $120M to Power Real-Time AI Analytics', date: 'Jun 10, 2026', href: '#' },
   { outlet: 'The Information', headline: 'The Quiet Infrastructure Play Powering a New Generation of AI Products', date: 'May 5, 2026', href: '#' },
-  { outlet: 'VentureBeat', headline: 'How Cerveau Analytique is Closing the Data-to-Decision Gap', date: 'Apr 18, 2026', href: '#' },
+  { outlet: 'VentureBeat', headline: 'How Prysel is Closing the Data-to-Decision Gap', date: 'Apr 18, 2026', href: '#' },
 ]
 
 export default function PressPage() {
@@ -21,8 +21,8 @@ export default function PressPage() {
           <h1 className="static-title">In the news</h1>
           <p className="static-subtitle">
             For media inquiries, please contact{' '}
-            <a href="mailto:press@cerveauanalytique.com" className="inline-link">
-              press@cerveauanalytique.com
+            <a href="mailto:press@prysel.com" className="inline-link">
+              press@prysel.com
             </a>
           </p>
         </div>

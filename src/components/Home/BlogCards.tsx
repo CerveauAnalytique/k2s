@@ -171,10 +171,10 @@ export function BlogCards({ stories, business }: BlogCardsProps) {
           </div>
         </div>
 
-        {/* Section 3: Cerveau for Business (Payload CMS Posts with Business category) */}
+        {/* Section 3: Prysel for Business (Payload CMS Posts with Business category) */}
         <div className="space-y-6 pt-4">
           <div className="flex items-center justify-between">
-            <h3 className="text-xl font-bold tracking-tight">Cerveau for business</h3>
+            <h3 className="text-xl font-bold tracking-tight">Prysel for business</h3>
             <Link
               href="/blog?category=Business"
               className="text-xs font-semibold text-neutral-500 hover:text-neutral-900 dark:hover:text-white transition flex items-center"

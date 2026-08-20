@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 import { getMe, getModerationQueue, getRules, getUsers } from '@/lib/marketplace/api'
 
 export const metadata: Metadata = {
-  title: 'Rules & moderation · Neuriy Marketplace',
+  title: 'Rules & moderation · Prysel Marketplace',
 }
 
 export default async function AdminPage({

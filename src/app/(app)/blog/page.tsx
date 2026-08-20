@@ -54,7 +54,7 @@ export default async function BlogIndexPage({ searchParams }: PageProps) {
       <div className="max-w-[1400px] mx-auto px-6 space-y-10">
         <div className="space-y-4 max-w-2xl">
           <h1 className="text-4xl md:text-6xl font-black tracking-tighter">
-            Cerveau <span className="text-neutral-400">Stories & Blog</span>
+            Prysel <span className="text-neutral-400">Stories & Blog</span>
           </h1>
           <p className="text-base md:text-lg text-neutral-600 dark:text-neutral-400">
             Insights, engineering breakthroughs, and customer stories from the team building analytical intelligence.
@@ -131,6 +131,6 @@ export default async function BlogIndexPage({ searchParams }: PageProps) {
 }
 
 export const metadata: Metadata = {
-  title: 'Blog & Stories — Cerveau Analytique',
+  title: 'Blog & Stories — Prysel',
   description: 'Explore latest stories, business case studies, and engineering blogs.',
 }

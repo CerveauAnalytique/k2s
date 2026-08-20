@@ -9,13 +9,13 @@ interface Message {
   content: string
 }
 
-export default function ChatNeuriyPage() {
+export default function ChatPryselPage() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 'welcome',
       role: 'assistant',
       content:
-        'Hello! I am Neuriy AI, your analytical intelligence assistant. How can I assist you with models, APIs, datasets, or carbon emissions analysis today?',
+        'Hello! I am Prysel AI, your analytical intelligence assistant. How can I assist you with models, APIs, datasets, or carbon emissions analysis today?',
     },
   ])
   const [input, setInput] = useState('')
@@ -59,7 +59,7 @@ export default function ChatNeuriyPage() {
     } else if (q.includes('shop') || q.includes('product')) {
       return 'You can explore all analytics hardware, access tokens, and merchandise directly in our Products Shop at /shop.'
     }
-    return `Thank you for your message regarding "${query}". The Cerveau Analytique AI engine is ready to assist. Check our documentation at /docs for deeper integration guides.`
+    return `Thank you for your message regarding "${query}". The Prysel AI engine is ready to assist. Check our documentation at /docs for deeper integration guides.`
   }
 
   return (
@@ -70,9 +70,9 @@ export default function ChatNeuriyPage() {
             <Sparkles className="h-5 w-5 text-gold" />
           </div>
           <div>
-            <h1 className="text-lg font-bold tracking-tight">Chat Neuriy AI</h1>
+            <h1 className="text-lg font-bold tracking-tight">Chat Prysel AI</h1>
             <p className="text-xs text-neutral-400">
-              Interactive AI Assistant • Cerveau Intelligence System
+              Interactive AI Assistant • Prysel Intelligence System
             </p>
           </div>
         </div>
@@ -113,7 +113,7 @@ export default function ChatNeuriyPage() {
         {loading && (
           <div className="flex justify-start">
             <div className="flex items-center gap-2 p-3.5 bg-neutral-900 border border-neutral-800 rounded-2xl rounded-tl-none text-xs text-neutral-400">
-              <Bot className="w-4 h-4 animate-spin text-gold" /> Neuriy AI is thinking…
+              <Bot className="w-4 h-4 animate-spin text-gold" /> Prysel AI is thinking…
             </div>
           </div>
         )}
@@ -124,7 +124,7 @@ export default function ChatNeuriyPage() {
           <input
             className="flex-1 py-3 px-4 rounded-xl border border-neutral-800 bg-neutral-900 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:border-neutral-700"
             value={input}
-            placeholder="Ask Neuriy AI a question..."
+            placeholder="Ask Prysel AI a question..."
             onChange={(e) => setInput(e.target.value)}
             disabled={loading}
           />

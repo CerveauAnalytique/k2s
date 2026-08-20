@@ -13,7 +13,7 @@ export const Header: GlobalConfig = {
     {
       name: 'siteTitle',
       type: 'text',
-      defaultValue: 'Cerveau Analytique',
+      defaultValue: 'Prysel',
     },
     {
       name: 'searchPlaceholder',

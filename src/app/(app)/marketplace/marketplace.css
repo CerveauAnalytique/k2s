@@ -1,4 +1,4 @@
-/* Scoped Neuriy Marketplace styles for Next.js embedding */
+/* Scoped Prysel Marketplace styles for Next.js embedding */
 .neuriy-marketplace {
   --bg: #f0f0f0;
   --surface: #ffffff;
@@ -436,13 +436,21 @@ body:has([data-marketplace-root]) {
   text-decoration: none;
 }
 
-.button--primary {
+.button--primary,
+.neuriy-marketplace a.button--primary,
+.neuriy-marketplace a.button--primary:visited,
+.neuriy-marketplace a.button--primary:hover,
+.neuriy-marketplace a.button--primary:focus {
   background: var(--accent);
-  color: #fff;
+  color: #ffffff !important;
+  text-decoration: none;
 }
 
-.button--primary:hover {
+.button--primary:hover,
+.neuriy-marketplace a.button--primary:hover {
   filter: brightness(0.95);
+  color: #ffffff !important;
+  text-decoration: none;
 }
 
 .button--ghost {

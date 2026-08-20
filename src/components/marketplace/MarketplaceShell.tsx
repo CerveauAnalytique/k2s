@@ -52,13 +52,9 @@ export function MarketplaceShell({ user, query = '', category = 'All Categories'
     <div className="neuriy-marketplace">
       <header className="site-header">
         <div className="site-header__inner">
-          <Link className="brand" href="/marketplace" aria-label="Neuriy Marketplace home">
+          <Link className="brand" href="/marketplace" aria-label="Prysel Marketplace home">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/marketplace/images/neuriy-logo.svg" alt="" width={36} height={36} />
-            <span className="brand__text">
-              <span className="brand__name">Neuriy</span>
-              <span className="brand__sub">Marketplace</span>
-            </span>
+            <img src="/prysel-logo.png" alt="Prysel" className="h-7 w-auto object-contain" />
           </Link>
 
           <nav className="site-nav" aria-label="Primary">
@@ -144,7 +140,7 @@ export function MarketplaceShell({ user, query = '', category = 'All Categories'
                       <Link href="/marketplace/account/profile">Profile</Link>
                       <Link href="/marketplace/account/settings">Settings</Link>
                       {isModerator ? <Link href="/marketplace/admin">Rules & moderation</Link> : null}
-                      <Link href="/marketplace/pages/sdk">Open in Neuriy Chat</Link>
+                      <Link href="/marketplace/pages/sdk">Open in Prysel Chat</Link>
                       <form action="/api/marketplace/auth/logout" method="post">
                         <button type="submit" className="user-menu__logout">
                           Sign out
@@ -181,11 +177,11 @@ export function MarketplaceShell({ user, query = '', category = 'All Categories'
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/marketplace/images/neuriy-logo.svg" alt="" width={32} height={32} />
               <span className="brand__text">
-                <span className="brand__name">Neuriy</span>
+                <span className="brand__name">Prysel</span>
                 <span className="brand__sub">Marketplace</span>
               </span>
             </Link>
-            <p>Discover, download, and publish AI apps and tools for Neuriy Chat.</p>
+            <p>Discover, download, and publish AI apps and tools for Prysel Chat.</p>
           </div>
           <div>
             <h3>Discover</h3>
@@ -196,7 +192,7 @@ export function MarketplaceShell({ user, query = '', category = 'All Categories'
           </div>
           <div>
             <h3>Developers</h3>
-            <Link href="/marketplace/pages/sdk">Neuriy Chat SDK</Link>
+            <Link href="/marketplace/pages/sdk">Prysel Chat SDK</Link>
             <Link href="/marketplace/pages/developers">Developer docs</Link>
             <Link href="/marketplace/apps/upload">Upload an app</Link>
             <a href="/api/marketplace/proxy/docs" rel="noopener">
@@ -212,8 +208,8 @@ export function MarketplaceShell({ user, query = '', category = 'All Categories'
           </div>
         </div>
         <div className="site-footer__bottom">
-          <span>© {new Date().getFullYear()} Neuriy Marketplace</span>
-          <Link href="/">Back to Cerveau Analytique</Link>
+          <span>© {new Date().getFullYear()} Prysel Marketplace</span>
+          <Link href="/">Back to Prysel</Link>
         </div>
       </footer>
     </div>

@@ -3,17 +3,17 @@ import Link from 'next/link'
 import React from 'react'
 
 export const metadata: Metadata = {
-  title: 'SDKs — Cerveau Analytique',
-  description: 'Official client SDKs for the Cerveau Analytique API.',
+  title: 'SDKs — Prysel',
+  description: 'Official client SDKs for the Prysel API.',
 }
 
 const sdks = [
-  { id: 'js', lang: 'JavaScript / TypeScript', icon: '🟨', install: 'npm install @cerveauanalytique/sdk', status: 'Stable', version: 'v3.1.0', docs: '/docs/sdks/js' },
-  { id: 'python', lang: 'Python', icon: '🐍', install: 'pip install cerveauanalytique', status: 'Stable', version: 'v3.0.4', docs: '/docs/sdks/python' },
-  { id: 'go', lang: 'Go', icon: '🔵', install: 'go get github.com/cerveauanalytique/sdk-go', status: 'Stable', version: 'v3.0.1', docs: '/docs/sdks/go' },
-  { id: 'rust', lang: 'Rust', icon: '🦀', install: 'cargo add cerveauanalytique', status: 'Beta', version: 'v0.9.0', docs: '/docs/sdks/rust' },
-  { id: 'java', lang: 'Java / Kotlin', icon: '☕', install: 'implementation "io.cerveauanalytique:sdk:3.0.0"', status: 'Stable', version: 'v3.0.0', docs: '/docs/sdks/java' },
-  { id: 'swift', lang: 'Swift', icon: '🍎', install: '.package(url: "https://github.com/cerveauanalytique/sdk-swift", ...)', status: 'Beta', version: 'v0.7.0', docs: '/docs/sdks/swift' },
+  { id: 'js', lang: 'JavaScript / TypeScript', icon: '🟨', install: 'npm install @prysel/sdk', status: 'Stable', version: 'v3.1.0', docs: '/docs/sdks/js' },
+  { id: 'python', lang: 'Python', icon: '🐍', install: 'pip install prysel', status: 'Stable', version: 'v3.0.4', docs: '/docs/sdks/python' },
+  { id: 'go', lang: 'Go', icon: '🔵', install: 'go get github.com/prysel/sdk-go', status: 'Stable', version: 'v3.0.1', docs: '/docs/sdks/go' },
+  { id: 'rust', lang: 'Rust', icon: '🦀', install: 'cargo add prysel', status: 'Beta', version: 'v0.9.0', docs: '/docs/sdks/rust' },
+  { id: 'java', lang: 'Java / Kotlin', icon: '☕', install: 'implementation "io.prysel:sdk:3.0.0"', status: 'Stable', version: 'v3.0.0', docs: '/docs/sdks/java' },
+  { id: 'swift', lang: 'Swift', icon: '🍎', install: '.package(url: "https://github.com/prysel/sdk-swift", ...)', status: 'Beta', version: 'v0.7.0', docs: '/docs/sdks/swift' },
 ]
 
 export default function SdksPage() {

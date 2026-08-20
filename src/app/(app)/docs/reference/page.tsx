@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import React from 'react'
 import { DocsLayout } from '@/components/DocsLayout'
 
-export const metadata: Metadata = { title: 'API Reference — Cerveau Analytique Docs' }
+export const metadata: Metadata = { title: 'API Reference — Prysel Docs' }
 
 const TOC = [
   { id: 'base-url', title: 'Base URL', level: 2 },
@@ -35,11 +35,11 @@ export default function ReferenceDocsPage() {
   return (
     <DocsLayout
       title="API Reference"
-      description="Complete endpoint reference for the Cerveau Analytique REST API."
+      description="Complete endpoint reference for the Prysel REST API."
       toc={TOC}
     >
       <h2 id="base-url">Base URL</h2>
-      <pre className="docs-code-block"><code>https://api.cerveauanalytique.com</code></pre>
+      <pre className="docs-code-block"><code>https://api.prysel.com</code></pre>
 
       <h2 id="versioning">Versioning</h2>
       <p>

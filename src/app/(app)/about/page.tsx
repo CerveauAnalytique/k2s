@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-  title: 'About Us — Cerveau Analytique',
-  description: 'Learn about Cerveau Analytique, our mission, team, and values.',
+  title: 'About Us — Prysel',
+  description: 'Learn about Prysel, our mission, team, and values.',
 }
 
 const values = [
@@ -21,7 +21,7 @@ export default function AboutPage() {
           <p className="static-eyebrow">About Us</p>
           <h1 className="static-title">The analytical intelligence layer for teams building the future</h1>
           <p className="static-subtitle">
-            Cerveau Analytique was founded in 2022 with a single belief: that the gap between raw data
+            Prysel was founded in 2022 with a single belief: that the gap between raw data
             and actionable intelligence should be milliseconds, not months.
           </p>
         </div>
@@ -33,7 +33,7 @@ export default function AboutPage() {
           <p className="about-body">
             We build the intelligence substrate that powers the next generation of data-driven products.
             From real-time anomaly detection to natural-language querying of petabyte-scale warehouses,
-            Cerveau Analytique compresses the distance between question and answer.
+            Prysel compresses the distance between question and answer.
           </p>
         </section>
 

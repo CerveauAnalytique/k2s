@@ -35,7 +35,7 @@ export function HeaderClient({ header }: Props) {
   const userAvatar = (user as any)?.avatar?.url || (user as any)?.avatar || (user as any)?.image?.url
 
   // Dynamically formatted title from Payload CMS
-  const rawTitle = header.siteTitle || 'Cerveau Analytique'
+  const rawTitle = header.siteTitle || 'Prysel'
   const titleParts = rawTitle.split(' ')
   const firstTitlePart = titleParts[0]
   const secondTitlePart = titleParts.slice(1).join(' ')
@@ -64,9 +64,14 @@ export function HeaderClient({ header }: Props) {
 
   return (
     <nav className="site-header">
-      {/* Brand Title connected to Payload CMS siteTitle field */}
-      <Link href="/" className="nav-logo">
-        {firstTitlePart} {secondTitlePart ? <span>{secondTitlePart}</span> : null}
+      {/* Prysel Brand Logo */}
+      <Link href="/" className="nav-logo flex items-center gap-2">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/prysel-logo.png"
+          alt="Prysel"
+          className="h-7 w-auto object-contain"
+        />
       </Link>
 
       {/* Dynamic Nav Links connected to Payload CMS header.navItems */}

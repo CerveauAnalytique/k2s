@@ -3,8 +3,8 @@ import Link from 'next/link'
 import React from 'react'
 
 export const metadata: Metadata = {
-  title: 'API — Cerveau Analytique',
-  description: 'Integrate the Cerveau Analytique intelligence layer into your stack.',
+  title: 'API — Prysel',
+  description: 'Integrate the Prysel intelligence layer into your stack.',
 }
 
 const CAPABILITIES = [
@@ -52,7 +52,7 @@ const CAPABILITIES = [
   },
 ]
 
-const QUICK_EXAMPLE = `curl https://api.cerveauanalytique.com/v1/carbon/calculate \\
+const QUICK_EXAMPLE = `curl https://api.prysel.com/v1/carbon/calculate \\
   -H "Authorization: Bearer sk-ca-YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -103,7 +103,7 @@ export default function ApiPage() {
             <em>Here&apos;s what you can build.</em>
           </h1>
           <p className="static-subtitle">
-            The Cerveau Analytique API gives you programmatic access to carbon footprint analysis,
+            The Prysel API gives you programmatic access to carbon footprint analysis,
             semantic search, predictive models, and document intelligence — all from a single,
             consistent interface.
           </p>

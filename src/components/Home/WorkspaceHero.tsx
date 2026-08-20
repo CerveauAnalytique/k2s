@@ -26,7 +26,7 @@ export function WorkspaceHero() {
               <div className="flex-1 bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl px-3.5 py-1.5 flex items-center space-x-2.5 text-xs text-neutral-500 shadow-sm">
                 <Globe size={14} className="text-blue-500" />
                 <span className="flex-1 truncate font-mono text-[11px]">
-                  cerveau.ai/builder/neural-workspace
+                  prysel.com/builder/neural-workspace
                 </span>
               </div>
             </div>

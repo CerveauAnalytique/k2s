@@ -7,8 +7,8 @@ import { getMarketplaceToken } from '@/lib/marketplace/auth'
 import type { MarketplaceApp } from '@/lib/marketplace/types'
 
 export const metadata: Metadata = {
-  title: 'Neuriy Marketplace',
-  description: 'Browse, download, and publish AI apps and tools for Neuriy Chat.',
+  title: 'Prysel Marketplace',
+  description: 'Browse, download, and publish AI apps and tools for Prysel Chat.',
 }
 
 type SearchParams = Promise<{ q?: string; category?: string; sort?: string }>
@@ -41,10 +41,10 @@ export default async function MarketplaceHomePage({ searchParams }: { searchPara
 
       <section className="store-hero">
         <div className="store-hero__copy">
-          <p className="store-hero__brand">Neuriy Marketplace</p>
-          <h1 className="store-hero__title">Apps and tools for Neuriy AI</h1>
+          <p className="store-hero__brand">Prysel Marketplace</p>
+          <h1 className="store-hero__title">Apps and tools for Prysel AI</h1>
           <p className="store-hero__lede">
-            Browse featured assistants, publish your own packages, and open installs from Neuriy Chat.
+            Browse featured assistants, publish your own packages, and open installs from Prysel Chat.
           </p>
           <div className="store-hero__actions">
             <a className="button button--primary" href="#featured">
@@ -60,7 +60,7 @@ export default async function MarketplaceHomePage({ searchParams }: { searchPara
               </Link>
             )}
             <Link className="button button--ghost" href="/marketplace/pages/sdk">
-              Open in Neuriy Chat
+              Open in Prysel Chat
             </Link>
           </div>
         </div>
@@ -155,9 +155,9 @@ export default async function MarketplaceHomePage({ searchParams }: { searchPara
       <section className="panel panel--cta">
         <div className="cta-row">
           <div>
-            <h2 className="panel__title">Build for Neuriy Chat</h2>
+            <h2 className="panel__title">Build for Prysel Chat</h2>
             <p className="lede">
-              Use the official SDK to search, install, and open marketplace apps from Neuriy Chat conversations.
+              Use the official SDK to search, install, and open marketplace apps from Prysel Chat conversations.
             </p>
           </div>
           <Link className="button button--primary" href="/marketplace/pages/sdk">

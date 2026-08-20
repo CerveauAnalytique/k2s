@@ -4,8 +4,8 @@ import { DocsLayout } from '@/components/DocsLayout'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Introduction — Cerveau Analytique Docs',
-  description: 'Welcome to the Cerveau Analytique platform documentation.',
+  title: 'Introduction — Prysel Docs',
+  description: 'Welcome to the Prysel platform documentation.',
 }
 
 const TOC = [
@@ -19,14 +19,14 @@ export default function DocsIndexPage() {
   return (
     <DocsLayout
       title="Introduction"
-      description="Welcome to the Cerveau Analytique platform documentation."
+      description="Welcome to the Prysel platform documentation."
       toc={TOC}
       nextPage={{ title: 'Quickstart', href: '/docs/quickstart' }}
     >
       <h2 id="about">About this documentation</h2>
       <p>
         This documentation covers all public-facing APIs, SDKs, and integrations for the{' '}
-        <strong>Cerveau Analytique</strong> platform. Whether you are running a carbon footprint
+        <strong>Prysel</strong> platform. Whether you are running a carbon footprint
         analysis, performing semantic search, or forecasting time-series data, you will find
         everything you need here.
       </p>
@@ -36,7 +36,7 @@ export default function DocsIndexPage() {
       </p>
 
       <div className="docs-callout docs-callout--info">
-        <strong>Beta notice:</strong> The Cerveau Analytique platform is currently in beta. APIs are
+        <strong>Beta notice:</strong> The Prysel platform is currently in beta. APIs are
         stable but breaking changes will be communicated with 30 days notice and a major version bump.
       </div>
 
@@ -75,7 +75,7 @@ export default function DocsIndexPage() {
       <h2 id="prerequisites">Prerequisites</h2>
       <p>To get started you need:</p>
       <ol>
-        <li>A Cerveau Analytique account — <Link href="/create-account" className="inline-link">sign up here</Link></li>
+        <li>A Prysel account — <Link href="/create-account" className="inline-link">sign up here</Link></li>
         <li>An API key — generate one from your <Link href="/dashboard" className="inline-link">dashboard</Link></li>
         <li>Basic familiarity with HTTP and JSON</li>
       </ol>

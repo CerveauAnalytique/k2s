@@ -7,7 +7,7 @@ import React from 'react'
 import { DashboardClient } from './DashboardClient'
 
 export const metadata: Metadata = {
-  title: 'Dashboard — Cerveau Analytique',
+  title: 'Dashboard — Prysel',
   description: 'Your analytics and carbon footprint intelligence dashboard.',
 }
 

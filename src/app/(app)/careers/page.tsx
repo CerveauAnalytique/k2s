@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 
 export const metadata: Metadata = {
-  title: 'Careers — Cerveau Analytique',
+  title: 'Careers — Prysel',
   description: 'Join the team building the intelligence substrate for the future.',
 }
 

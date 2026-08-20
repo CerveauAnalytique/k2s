@@ -1,12 +1,12 @@
-# Neuriy Marketplace
+# Prysel Marketplace
 
-AI app store for **Neuriy AI** — browse, download, and publish apps/tools. Built as an ASP.NET Core MVC storefront with a Python FastAPI backend, styled as a close copy of the classic Firefox Marketplace layout.
+AI app store for **Prysel AI** — browse, download, and publish apps/tools. Built as an ASP.NET Core MVC storefront with a Python FastAPI backend, styled as a close copy of the classic Firefox Marketplace layout.
 
 ## Demo
 
 Walkthrough video (home → app details → register/login → upload → admin rules):
 
-[![Neuriy Marketplace walkthrough](docs/media/01-home.png)](docs/media/neuriy-marketplace-walkthrough.mp4)
+[![Prysel Marketplace walkthrough](docs/media/01-home.png)](docs/media/neuriy-marketplace-walkthrough.mp4)
 
 - [Watch walkthrough (MP4)](docs/media/neuriy-marketplace-walkthrough.mp4)
 - [Slideshow demo (MP4)](docs/media/neuriy-marketplace-demo.mp4)
@@ -14,7 +14,7 @@ Walkthrough video (home → app details → register/login → upload → admin 
 ### Screenshots
 
 #### Home store
-![Neuriy Marketplace home](docs/media/01-home.png)
+![Prysel Marketplace home](docs/media/01-home.png)
 
 #### New apps tab
 ![New tab](docs/media/02-new-tab.png)
@@ -38,7 +38,7 @@ Walkthrough video (home → app details → register/login → upload → admin 
 
 | Layer | Tech |
 | --- | --- |
-| Web UI | ASP.NET Core 8 MVC (`src/NeuriyMarketplace.Web`) |
+| Web UI | ASP.NET Core 8 MVC (`src/PryselMarketplace.Web`) |
 | API | Python FastAPI (`src/api`) |
 | Database | Turso / libSQL (`libsql://neuriymp-ericksonholding.aws-eu-west-1.turso.io`) with local SQLite fallback |
 | Auth | JWT sessions + roles (`user`, `admin`, `administrator`) |
@@ -51,11 +51,11 @@ Walkthrough video (home → app details → register/login → upload → admin 
 - Footer pages: About, Developers, Support, Terms, Cookies, Community, Publishers, SDK
 - Category filter and search
 - App detail page with ratings and download counts
-- Download packages for Neuriy AI
+- Download packages for Prysel AI
 - Upload your own app/tool (package + optional icon)
 - Register / sign-in (first account = admin)
 - Admin / administrator rules & moderation panel
-- **Neuriy Chat SDK** (`sdk/python` + `sdk/neuriy-chat/manifest.json`)
+- **Prysel Chat SDK** (`sdk/python` + `sdk/neuriy-chat/manifest.json`)
 
 ## Prerequisites
 
@@ -87,7 +87,7 @@ API docs: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs).
 
 ## Configuration
 
-`src/NeuriyMarketplace.Web/appsettings.json`:
+`src/PryselMarketplace.Web/appsettings.json`:
 
 ```json
 "MarketplaceApi": {
@@ -95,9 +95,9 @@ API docs: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs).
 }
 ```
 
-## Neuriy Chat SDK
+## Prysel Chat SDK
 
-Install and open the marketplace from Neuriy Chat:
+Install and open the marketplace from Prysel Chat:
 
 ```bash
 pip install -e ./sdk/python
@@ -110,8 +110,8 @@ from neuriy_marketplace import MarketplaceClient, chat_tools, execute_tool
 
 client = MarketplaceClient()
 apps = client.search_apps("assistant")
-open_payload = client.open_app(apps[0]["id"])  # deep links for Neuriy Chat
-tools = chat_tools()  # register these tools in Neuriy Chat
+open_payload = client.open_app(apps[0]["id"])  # deep links for Prysel Chat
+tools = chat_tools()  # register these tools in Prysel Chat
 ```
 
 Plugin manifest: [`sdk/neuriy-chat/manifest.json`](sdk/neuriy-chat/manifest.json)  
@@ -122,9 +122,9 @@ In-app guide: [http://127.0.0.1:5011/Pages/Sdk](http://127.0.0.1:5011/Pages/Sdk)
 ```
 src/
   api/                      # FastAPI: auth, catalog, upload, download, rules
-  NeuriyMarketplace.Web/    # MVC UI (store + account + pages)
+  PryselMarketplace.Web/    # MVC UI (store + account + pages)
 sdk/
-  python/                   # Neuriy Chat Python SDK
+  python/                   # Prysel Chat Python SDK
   neuriy-chat/              # Chat plugin manifest
 docs/media/                 # Screenshots + demo videos
 scripts/
@@ -173,4 +173,4 @@ Copy `src/api/.env.example` to `src/api/.env` if you prefer dotenv files.
 
 ## System AI rules
 
-On every upload, `system_ai` scores the app against enabled rules (description quality, spam language, placeholder names, Neuriy relevance, categories). Apps below the quality threshold or failing block rules are **blacklisted** and cannot be downloaded until an administrator overrides.
+On every upload, `system_ai` scores the app against enabled rules (description quality, spam language, placeholder names, Prysel relevance, categories). Apps below the quality threshold or failing block rules are **blacklisted** and cannot be downloaded until an administrator overrides.

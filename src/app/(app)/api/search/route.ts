@@ -15,7 +15,7 @@ const staticDocs = [
 
 const staticResearch = [
   { title: 'Advances in Sparse Neural Architectures', category: 'Research', href: '/research', description: 'Sparse transformer architectures for real-time market analysis.' },
-  { title: 'Cerveau Analytique API v3', category: 'Research', href: '/research', description: 'Unified intelligence layer release notes and capabilities.' },
+  { title: 'Prysel API v3', category: 'Research', href: '/research', description: 'Unified intelligence layer release notes and capabilities.' },
   { title: 'Interpretability Tooling for Decision Systems', category: 'Research', href: '/research', description: 'Auditing model decisions in regulated industries.' },
   { title: 'Chain-of-Thought Distillation', category: 'Research', href: '/research', description: 'Compact analytics models with preserved reasoning.' },
   { title: 'Semantic Search Across Data Warehouses', category: 'Research', href: '/research', description: 'RAG pipeline over petabyte-scale columnar stores.' },

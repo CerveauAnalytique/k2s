@@ -129,7 +129,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = resolvedParams
   const sample = SAMPLE_POSTS.find((p) => p.slug === slug)
   return {
-    title: `${sample?.title || 'Blog Post'} — Cerveau Analytique`,
+    title: `${sample?.title || 'Blog Post'} — Prysel`,
     description: sample?.excerpt || 'Read latest blog stories and insights.',
   }
 }

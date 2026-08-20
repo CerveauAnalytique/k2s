@@ -3,9 +3,9 @@ import Link from 'next/link'
 import React from 'react'
 
 export const metadata: Metadata = {
-  title: 'Research — Cerveau Analytique',
+  title: 'Research — Prysel',
   description:
-    'Cutting-edge research publications from Cerveau Analytique on AI, analytics, and intelligent systems.',
+    'Cutting-edge research publications from Prysel on AI, analytics, and intelligent systems.',
 }
 
 const researchPosts = [
@@ -23,7 +23,7 @@ const researchPosts = [
   {
     id: 2,
     category: 'PRODUCT',
-    title: 'Cerveau Analytique API v3: Unified Intelligence Layer',
+    title: 'Prysel API v3: Unified Intelligence Layer',
     excerpt:
       'Our third major API release unifies structured data queries, unstructured document analysis, and predictive modelling behind a single, coherent interface.',
     date: 'Jul 30, 2026',
@@ -69,7 +69,7 @@ const researchPosts = [
     category: 'PRODUCT',
     title: 'Semantic Search Across Structured Data Warehouses',
     excerpt:
-      'Natural-language querying over petabyte-scale columnar stores using a fine-tuned retrieval-augmented generation pipeline built on the Cerveau platform.',
+      'Natural-language querying over petabyte-scale columnar stores using a fine-tuned retrieval-augmented generation pipeline built on the Prysel platform.',
     date: 'May 22, 2026',
     readTime: '11 min read',
     tag: null,
@@ -98,7 +98,7 @@ export default function ResearchPage() {
             Intelligence, <em>examined.</em>
           </h1>
           <p className="research-hero-subtitle">
-            Discoveries, product updates, and thinking from the Cerveau Analytique team.
+            Discoveries, product updates, and thinking from the Prysel team.
           </p>
         </div>
       </section>

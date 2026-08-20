@@ -13,7 +13,7 @@ class MarketplaceError(RuntimeError):
 
 
 class MarketplaceClient:
-    """HTTP client for Neuriy Marketplace — usable from Neuriy Chat tools."""
+    """HTTP client for Prysel Marketplace — usable from Prysel Chat tools."""
 
     def __init__(
         self,
@@ -90,7 +90,7 @@ class MarketplaceClient:
         return self._request("GET", f"/api/apps/{urllib.parse.quote(app_id)}")
 
     def open_app(self, app_id: str) -> dict[str, Any]:
-        """Return a Neuriy Chat open payload with deep links for the selected app."""
+        """Return a Prysel Chat open payload with deep links for the selected app."""
         app = self.get_app(app_id)
         details_url = f"{self.store_url}/Apps/Details/{urllib.parse.quote(app_id)}"
         download_url = f"{self.base_url}/api/apps/{urllib.parse.quote(app_id)}/download"
@@ -99,7 +99,7 @@ class MarketplaceClient:
             "app": app,
             "actions": [
                 {"label": "Open in Marketplace", "url": details_url},
-                {"label": "Download for Neuriy AI", "url": download_url},
+                {"label": "Download for Prysel AI", "url": download_url},
             ],
             "chat_card": {
                 "title": app.get("name"),

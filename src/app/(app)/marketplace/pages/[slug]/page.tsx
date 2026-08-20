@@ -9,18 +9,18 @@ const PAGES: Record<
   }
 > = {
   about: {
-    title: 'About Neuriy Marketplace',
+    title: 'About Prysel Marketplace',
     body: (
       <>
         <p className="lede">
-          Neuriy Marketplace is the store for AI apps and tools that run with Neuriy Chat and the Neuriy AI platform.
+          Prysel Marketplace is the store for AI apps and tools that run with Prysel Chat and the Prysel AI platform.
         </p>
         <p>
-          Publishers upload packages, system AI rules score quality, and users download approved apps for Neuriy AI. The
+          Publishers upload packages, system AI rules score quality, and users download approved apps for Prysel AI. The
           first account on a new deployment becomes admin; administrators can enforce marketplace rules.
         </p>
         <p>
-          <a href="/marketplace/pages/sdk">Learn how to open the store from Neuriy Chat →</a>
+          <a href="/marketplace/pages/sdk">Learn how to open the store from Prysel Chat →</a>
         </p>
       </>
     ),
@@ -29,12 +29,12 @@ const PAGES: Record<
     title: 'Developer docs',
     body: (
       <>
-        <p className="lede">Build and publish packages that Neuriy Chat can discover and open.</p>
+        <p className="lede">Build and publish packages that Prysel Chat can discover and open.</p>
         <ol>
           <li>Create an account and sign in.</li>
           <li>Upload a package with name, description, category, and optional icon.</li>
           <li>System AI moderation scores the listing against quality rules.</li>
-          <li>Once approved, users can download and open the app from the store or Neuriy Chat.</li>
+          <li>Once approved, users can download and open the app from the store or Prysel Chat.</li>
         </ol>
         <p>
           API base URL defaults to <code>http://127.0.0.1:8000</code>. See{' '}
@@ -62,7 +62,7 @@ const PAGES: Record<
     title: 'Terms of use',
     body: (
       <>
-        <p className="lede">By using Neuriy Marketplace you agree to publish accurate listings and respect moderation.</p>
+        <p className="lede">By using Prysel Marketplace you agree to publish accurate listings and respect moderation.</p>
         <p>Blacklisted or abusive packages may be removed. Admins may assign roles and enforce quality rules.</p>
       </>
     ),
@@ -71,7 +71,7 @@ const PAGES: Record<
     title: 'Cookies',
     body: (
       <>
-        <p className="lede">Neuriy Marketplace uses an httpOnly session cookie to keep you signed in.</p>
+        <p className="lede">Prysel Marketplace uses an httpOnly session cookie to keep you signed in.</p>
         <p>
           Cookie name: <code>neuriy_marketplace_token</code>. It stores a JWT issued by the marketplace API and is not
           shared with third parties.
@@ -83,9 +83,9 @@ const PAGES: Record<
     title: 'Community',
     body: (
       <>
-        <p className="lede">Share assistants, tools, and research utilities with other Neuriy Chat users.</p>
+        <p className="lede">Share assistants, tools, and research utilities with other Prysel Chat users.</p>
         <p>
-          Browse the <a href="/marketplace">store</a>, publish from the Upload page, and open installs from Neuriy Chat
+          Browse the <a href="/marketplace">store</a>, publish from the Upload page, and open installs from Prysel Chat
           with the SDK.
         </p>
       </>
@@ -95,7 +95,7 @@ const PAGES: Record<
     title: 'Publishers',
     body: (
       <>
-        <p className="lede">Ship packages that Neuriy AI users can find, rate, and download.</p>
+        <p className="lede">Ship packages that Prysel AI users can find, rate, and download.</p>
         <ol>
           <li>
             <a href="/marketplace/account/register">Create an account</a>
@@ -109,11 +109,11 @@ const PAGES: Record<
     ),
   },
   sdk: {
-    title: 'Open Marketplace in Neuriy Chat',
+    title: 'Open Marketplace in Prysel Chat',
     body: (
       <>
         <p className="lede">
-          Use the official Python SDK and chat tool manifest so Neuriy Chat can search, inspect, and open marketplace
+          Use the official Python SDK and chat tool manifest so Prysel Chat can search, inspect, and open marketplace
           apps.
         </p>
         <h2>1. Install</h2>
@@ -126,16 +126,16 @@ const PAGES: Record<
 # optional when calling authenticated endpoints
 export NEURIY_MARKETPLACE_TOKEN=your-jwt`}</code>
         </pre>
-        <h2>3. Use from Python / Neuriy Chat tools</h2>
+        <h2>3. Use from Python / Prysel Chat tools</h2>
         <pre className="code-block">
           <code>{`from neuriy_marketplace import MarketplaceClient, chat_tools
 
 client = MarketplaceClient()
 apps = client.search_apps("assistant")
-tools = chat_tools()  # OpenAI-compatible tool schemas for Neuriy Chat`}</code>
+tools = chat_tools()  # OpenAI-compatible tool schemas for Prysel Chat`}</code>
         </pre>
         <h2>4. Register the chat plugin</h2>
-        <p>Load the Neuriy Chat manifest to expose marketplace actions:</p>
+        <p>Load the Prysel Chat manifest to expose marketplace actions:</p>
         <ul>
           <li>
             <code>marketplace_search</code>
@@ -147,7 +147,7 @@ tools = chat_tools()  # OpenAI-compatible tool schemas for Neuriy Chat`}</code>
             <code>marketplace_list_categories</code>
           </li>
           <li>
-            <code>marketplace_open_app</code> — returns a deep link / install payload for Neuriy Chat
+            <code>marketplace_open_app</code> — returns a deep link / install payload for Prysel Chat
           </li>
         </ul>
         <p>
@@ -168,7 +168,7 @@ type Props = { params: Promise<{ slug: string }> }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const page = PAGES[slug]
-  return { title: page ? `${page.title} · Neuriy Marketplace` : 'Neuriy Marketplace' }
+  return { title: page ? `${page.title} · Prysel Marketplace` : 'Prysel Marketplace' }
 }
 
 export function generateStaticParams() {

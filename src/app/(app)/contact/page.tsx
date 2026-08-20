@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-  title: 'Contact — Cerveau Analytique',
-  description: 'Get in touch with the Cerveau Analytique team.',
+  title: 'Contact — Prysel',
+  description: 'Get in touch with the Prysel team.',
 }
 
 export default function ContactPage() {
@@ -24,26 +24,26 @@ export default function ContactPage() {
           <div className="contact-info">
             <div className="contact-item">
               <span className="contact-label">General</span>
-              <a href="mailto:hello@cerveauanalytique.com" className="contact-email">
-                hello@cerveauanalytique.com
+              <a href="mailto:hello@prysel.com" className="contact-email">
+                hello@prysel.com
               </a>
             </div>
             <div className="contact-item">
               <span className="contact-label">Sales</span>
-              <a href="mailto:sales@cerveauanalytique.com" className="contact-email">
-                sales@cerveauanalytique.com
+              <a href="mailto:sales@prysel.com" className="contact-email">
+                sales@prysel.com
               </a>
             </div>
             <div className="contact-item">
               <span className="contact-label">Press</span>
-              <a href="mailto:press@cerveauanalytique.com" className="contact-email">
-                press@cerveauanalytique.com
+              <a href="mailto:press@prysel.com" className="contact-email">
+                press@prysel.com
               </a>
             </div>
             <div className="contact-item">
               <span className="contact-label">Security</span>
-              <a href="mailto:security@cerveauanalytique.com" className="contact-email">
-                security@cerveauanalytique.com
+              <a href="mailto:security@prysel.com" className="contact-email">
+                security@prysel.com
               </a>
             </div>
           </div>

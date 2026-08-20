@@ -3,8 +3,8 @@ import Link from 'next/link'
 import React from 'react'
 
 export const metadata: Metadata = {
-  title: 'API Access — Cerveau Analytique',
-  description: 'Integrate the Cerveau Analytique intelligence layer directly into your applications.',
+  title: 'API Access — Prysel',
+  description: 'Integrate the Prysel intelligence layer directly into your applications.',
 }
 
 const plans = [

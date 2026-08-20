@@ -5,7 +5,7 @@ import type { Page } from '@/payload-types'
 import { RichText } from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 
-export const CerveauHero: React.FC<Page['hero']> = ({ links, richText }) => {
+export const PryselHero: React.FC<Page['hero']> = ({ links, richText }) => {
   const [searchValue, setSearchValue] = useState('')
 
   const handleHintClick = (hintText: string) => {
@@ -28,7 +28,7 @@ export const CerveauHero: React.FC<Page['hero']> = ({ links, richText }) => {
           )}
 
           <p className="hero-sub">
-            Cerveau Analytique is the analytical AI built for teams who need answers, not approximations.
+            Prysel is the analytical AI built for teams who need answers, not approximations.
           </p>
 
           <form
@@ -49,7 +49,7 @@ export const CerveauHero: React.FC<Page['hero']> = ({ links, richText }) => {
             <input
               className="hero-search"
               type="text"
-              placeholder="Ask Cerveau anything…"
+              placeholder="Ask Prysel anything…"
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
             />

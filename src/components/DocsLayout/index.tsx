@@ -135,7 +135,7 @@ export function DocsLayout({ children, title, description, prevPage, nextPage, t
         </nav>
 
         <div className="docs-sidebar-footer">
-          <a href="https://github.com/cerveauanalytique" className="docs-sidebar-ext-link">GitHub ↗</a>
+          <a href="https://github.com/prysel" className="docs-sidebar-ext-link">GitHub ↗</a>
           <Link href="/api" className="docs-sidebar-ext-link">API →</Link>
         </div>
       </aside>
@@ -199,7 +199,7 @@ export function DocsLayout({ children, title, description, prevPage, nextPage, t
                 ))}
               </ul>
               <div className="docs-toc-actions">
-                <a href="https://github.com/cerveauanalytique/docs" className="docs-toc-action">Edit on GitHub ↗</a>
+                <a href="https://github.com/prysel/docs" className="docs-toc-action">Edit on GitHub ↗</a>
               </div>
             </aside>
           )}

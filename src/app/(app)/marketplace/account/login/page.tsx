@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Sign in · Neuriy Marketplace',
+  title: 'Sign in · Prysel Marketplace',
 }
 
 export default async function LoginPage({

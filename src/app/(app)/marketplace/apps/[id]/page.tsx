@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params
   const app = await getApp(id)
   return {
-    title: app ? `${app.name} · Neuriy Marketplace` : 'App · Neuriy Marketplace',
+    title: app ? `${app.name} · Prysel Marketplace` : 'App · Prysel Marketplace',
   }
 }
 
@@ -55,7 +55,7 @@ export default async function AppDetailsPage({ params, searchParams }: Props) {
           <div className="detail__actions">
             {canDownload ? (
               <a className="button button--primary" href={`/api/marketplace/apps/${app.id}/download`}>
-                Download for Neuriy AI
+                Download for Prysel AI
               </a>
             ) : (
               <span className="button button--ghost" aria-disabled="true">

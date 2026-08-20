@@ -4,7 +4,7 @@ import { DocsLayout } from '@/components/DocsLayout'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Quickstart — Cerveau Analytique Docs',
+  title: 'Quickstart — Prysel Docs',
 }
 
 const TOC = [
@@ -19,7 +19,7 @@ export default function QuickstartPage() {
   return (
     <DocsLayout
       title="Quickstart"
-      description="Get up and running with the Cerveau Analytique API in under 5 minutes."
+      description="Get up and running with the Prysel API in under 5 minutes."
       toc={TOC}
       prevPage={{ title: 'Introduction', href: '/docs' }}
       nextPage={{ title: 'Authentication', href: '/docs/authentication' }}
@@ -41,7 +41,7 @@ export default function QuickstartPage() {
 
       <h2 id="step-3">3. Make your first request</h2>
       <p>Run the following with your terminal:</p>
-      <pre className="docs-code-block"><code>{`curl https://api.cerveauanalytique.com/v1/carbon/calculate \\
+      <pre className="docs-code-block"><code>{`curl https://api.prysel.com/v1/carbon/calculate \\
   -H "Authorization: Bearer sk-ca-YOUR_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -53,9 +53,9 @@ export default function QuickstartPage() {
   }'`}</code></pre>
 
       <p>Or using our JavaScript SDK:</p>
-      <pre className="docs-code-block"><code>{`import { CerveauAnalytique } from '@cerveauanalytique/sdk'
+      <pre className="docs-code-block"><code>{`import { PryselAnalytique } from '@prysel/sdk'
 
-const ca = new CerveauAnalytique({ apiKey: process.env.CA_API_KEY })
+const ca = new PryselAnalytique({ apiKey: process.env.CA_API_KEY })
 
 const result = await ca.carbon.calculate({
   country: 'Germany',

@@ -1,8 +1,8 @@
 {
   "id": "neuriy-marketplace",
-  "name": "Neuriy Marketplace",
+  "name": "Prysel Marketplace",
   "version": "1.0.0",
-  "description": "Search, inspect, and open Neuriy Marketplace apps from Neuriy Chat.",
+  "description": "Search, inspect, and open Prysel Marketplace apps from Prysel Chat.",
   "homepage": "http://127.0.0.1:5011/Pages/Sdk",
   "api_base_url_env": "NEURIY_MARKETPLACE_URL",
   "store_url_env": "NEURIY_MARKETPLACE_STORE_URL",
@@ -17,7 +17,7 @@
   "tools": [
     {
       "name": "marketplace_search",
-      "description": "Search Neuriy Marketplace for AI apps and tools."
+      "description": "Search Prysel Marketplace for AI apps and tools."
     },
     {
       "name": "marketplace_get_app",
@@ -29,11 +29,11 @@
     },
     {
       "name": "marketplace_open_app",
-      "description": "Open a marketplace app in Neuriy Chat with deep links."
+      "description": "Open a marketplace app in Prysel Chat with deep links."
     }
   ],
   "open_protocol": {
     "type": "neuriy.marketplace.open_app",
-    "actions": ["Open in Marketplace", "Download for Neuriy AI"]
+    "actions": ["Open in Marketplace", "Download for Prysel AI"]
   }
 }

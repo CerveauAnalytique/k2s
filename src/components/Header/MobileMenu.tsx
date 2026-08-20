@@ -56,7 +56,10 @@ export function MobileMenu({ menu }: Props) {
 
       <SheetContent side="left" className="px-5">
         <SheetHeader className="px-0 pt-4 pb-2">
-          <SheetTitle className="text-lg font-serif">Cerveau Analytique</SheetTitle>
+          <SheetTitle className="flex items-center gap-2">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/prysel-logo.png" alt="Prysel" className="h-6 w-auto object-contain" />
+          </SheetTitle>
           <SheetDescription />
         </SheetHeader>
 

@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-  title: 'Cookie Policy — Cerveau Analytique',
-  description: 'How and why Cerveau Analytique uses cookies.',
+  title: 'Cookie Policy — Prysel',
+  description: 'How and why Prysel uses cookies.',
 }
 
 const cookieTypes = [
@@ -53,7 +53,7 @@ export default function CookiesPage() {
         <p>You can control cookies through your browser settings. Note that disabling essential cookies will impact the functionality of the platform.</p>
 
         <h2>Contact</h2>
-        <p>For questions about our use of cookies, contact <a href="mailto:privacy@cerveauanalytique.com" className="inline-link">privacy@cerveauanalytique.com</a>.</p>
+        <p>For questions about our use of cookies, contact <a href="mailto:privacy@prysel.com" className="inline-link">privacy@prysel.com</a>.</p>
       </div>
     </div>
   )
