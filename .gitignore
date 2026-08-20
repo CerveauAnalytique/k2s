@@ -41,3 +41,8 @@ next-env.d.ts
 
 public/media
 
+
+# Vendored AI engines
+vendor/**/node_modules
+vendor/ellofive/.ellofive-deepfakes.env
+vendor/ellofive/memory/*.local.md

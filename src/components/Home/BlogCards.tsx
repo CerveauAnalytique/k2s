@@ -17,7 +17,9 @@ interface BlogCardsProps {
   stories?: BlogPostItem[]
   business?: BlogPostItem[]
   allPosts?: BlogPostItem[]
+  error?: string | null
 }
+
 
 const DEFAULT_EXPLORE = [
   {
@@ -82,13 +84,20 @@ const DEFAULT_FEATURE_TRIO = [
   },
 ]
 
-export function BlogCards({ stories, business }: BlogCardsProps) {
+export function BlogCards({ stories, business, error }: BlogCardsProps) {
   const displayStories = stories && stories.length > 0 ? stories : []
   const displayBusiness = business && business.length > 0 ? business : []
 
   return (
     <section className="w-full py-12 md:py-20 bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 font-sans border-b border-neutral-200 dark:border-neutral-800 transition-colors">
       <div className="max-w-[1400px] mx-auto px-6 space-y-16">
+        {error ? (
+          <div className="rounded-2xl border border-amber-200 bg-amber-50 px-6 py-8 text-center dark:border-amber-900/40 dark:bg-amber-950/30">
+            <h3 className="text-lg font-bold mb-1">Unable to load articles</h3>
+            <p className="text-sm text-amber-900/80 dark:text-amber-100/80">{error}</p>
+          </div>
+        ) : null}
+
         {/* Section 1: Explore More */}
         <div className="space-y-6">
           <h3 className="text-xl font-bold tracking-tight">Explore more</h3>
@@ -122,18 +131,33 @@ export function BlogCards({ stories, business }: BlogCardsProps) {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {displayStories.slice(0, 3).map((story) => (
+            {displayStories.length === 0 ? (
+              <div className="md:col-span-3 rounded-2xl border border-dashed border-neutral-300 dark:border-neutral-700 px-6 py-10 text-center">
+                <h4 className="text-lg font-bold mb-2">No blogs at the moment</h4>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                  We&apos;re preparing new research and insights. Check back soon.
+                </p>
+              </div>
+            ) : (
+              displayStories.slice(0, 3).map((story) => (
               <Link
                 key={story.id}
                 href={`/blog/${story.slug}`}
                 className="group flex flex-col space-y-3 cursor-pointer"
               >
                 <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">
-                  <img
-                    src={story.coverImageUrl || 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=800'}
-                    alt={story.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
+                  {story.coverImageUrl ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={story.coverImageUrl}
+                      alt=""
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-neutral-400 text-sm">
+                      {story.category}
+                    </div>
+                  )}
                   {story.blogId && (
                     <span className="absolute top-3 left-3 bg-black/70 backdrop-blur-md text-white text-[10px] font-mono px-2 py-0.5 rounded-md uppercase tracking-wider">
                       {story.blogId}
@@ -145,10 +169,11 @@ export function BlogCards({ stories, business }: BlogCardsProps) {
                 </h4>
                 <div className="text-xs font-medium text-neutral-400">
                   {story.category ? `${story.category} • ` : ''}
-                  {story.publishedAt || 'Aug 2026'}
+                  {story.publishedAt || ''}
                 </div>
               </Link>
-            ))}
+              ))
+            )}
           </div>
 
           {/* Sub-Feature Cards: Build / Ground / Act */}
@@ -184,19 +209,30 @@ export function BlogCards({ stories, business }: BlogCardsProps) {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {displayBusiness.slice(0, 3).map((biz) => (
+            {displayBusiness.length === 0 ? (
+              <div className="md:col-span-3 rounded-2xl border border-dashed border-neutral-300 dark:border-neutral-700 px-6 py-10 text-center">
+                <h4 className="text-lg font-bold mb-2">No blogs at the moment</h4>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                  We&apos;re preparing new research and insights. Check back soon.
+                </p>
+              </div>
+            ) : (
+              displayBusiness.slice(0, 3).map((biz) => (
               <Link
                 key={biz.id}
                 href={`/blog/${biz.slug}`}
                 className="group flex flex-col space-y-3 cursor-pointer"
               >
-                <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-800 flex items-center justify-center p-6 text-center">
-                  <img
-                    src={biz.coverImageUrl || 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800'}
-                    alt={biz.title}
-                    className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="relative z-10 font-bold text-white text-xl tracking-tight bg-black/40 backdrop-blur-sm px-4 py-2 rounded-xl border border-white/10">
+                <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center p-6 text-center">
+                  {biz.coverImageUrl ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={biz.coverImageUrl}
+                      alt=""
+                      className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : null}
+                  <div className="relative z-10 font-bold text-neutral-900 dark:text-white text-xl tracking-tight bg-white/80 dark:bg-black/40 backdrop-blur-sm px-4 py-2 rounded-xl border border-neutral-200 dark:border-white/10">
                     {biz.title.split(' ')[0]} {biz.title.split(' ')[1] || ''}
                   </div>
                 </div>
@@ -204,10 +240,12 @@ export function BlogCards({ stories, business }: BlogCardsProps) {
                   {biz.title}
                 </h4>
                 <div className="text-xs font-medium text-neutral-400">
-                  {biz.category} • {biz.publishedAt || 'Aug 2026'}
+                  {biz.category}
+                  {biz.publishedAt ? ` • ${biz.publishedAt}` : ''}
                 </div>
               </Link>
-            ))}
+              ))
+            )}
           </div>
         </div>
       </div>

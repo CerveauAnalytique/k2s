@@ -656,19 +656,26 @@ footer {
 @media (max-width: 768px) {
   nav.site-header {
     padding: 0 12px;
+    gap: 8px;
+    overflow-x: clip;
   }
   .nav-logo {
     margin-right: 8px;
     font-size: 15px;
+    max-width: min(46vw, 180px);
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .nav-right {
     gap: 6px;
     margin-left: auto;
+    min-width: 0;
   }
 }
 @media (max-width: 600px) {
   .footer-top { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
+  .nav-logo span { display: none; }
 }
 
 
